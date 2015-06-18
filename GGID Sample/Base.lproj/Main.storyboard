@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAj-fc-DCt">
+                                <rect key="frame" x="242" y="285" width="116" height="30"/>
+                                <state key="normal" title="Login With GGID">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EUu-04-6LT" kind="presentation" identifier="login" id="kwQ-Yt-upD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-gC-pTc">
+                                <rect key="frame" x="242" y="323" width="116" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egg-c2-PjD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="result of /api/users/me/ will be displayed here if you sucessfully logged in" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd4-gC-68E">
+                                <rect key="frame" x="16" y="374" width="568" height="206"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="bfk-LG-m5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hd4-gC-68E" firstAttribute="centerX" secondItem="wvh-gC-pTc" secondAttribute="centerX" id="1gy-Wt-Dtk"/>
+                            <constraint firstAttribute="bottom" secondItem="Hd4-gC-68E" secondAttribute="bottom" constant="20" symbolic="YES" id="4Z2-a9-lPB"/>
+                            <constraint firstItem="Hd4-gC-68E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AKg-jG-dsd"/>
+                            <constraint firstAttribute="centerX" secondItem="qAj-fc-DCt" secondAttribute="centerX" id="UtX-qh-AVA"/>
+                            <constraint firstItem="qAj-fc-DCt" firstAttribute="width" secondItem="wvh-gC-pTc" secondAttribute="width" id="XqP-bJ-9Kn"/>
+                            <constraint firstAttribute="centerY" secondItem="qAj-fc-DCt" secondAttribute="centerY" id="hjf-Le-n35"/>
+                            <constraint firstItem="qAj-fc-DCt" firstAttribute="leading" secondItem="wvh-gC-pTc" secondAttribute="leading" id="qND-or-P3O"/>
+                            <constraint firstItem="wvh-gC-pTc" firstAttribute="top" secondItem="qAj-fc-DCt" secondAttribute="bottom" constant="8" id="qwn-N8-Tvd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="qAj-fc-DCt" id="6rR-hB-t6g"/>
+                        <outlet property="logoutButton" destination="wvh-gC-pTc" id="MP6-0I-az6"/>
+                        <outlet property="resultTextView" destination="Hd4-gC-68E" id="9S1-Q9-LfJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Browser View Controller-->
+        <scene sceneID="ild-Rw-xl9">
+            <objects>
+                <viewController id="EUu-04-6LT" customClass="BrowserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kt1-Ob-qDG"/>
+                        <viewControllerLayoutGuide type="bottom" id="NKA-mo-Ge2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xAf-V6-X3m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XC-kd-BNm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4XC-kd-BNm" secondAttribute="trailing" id="6uw-92-juJ"/>
+                            <constraint firstItem="4XC-kd-BNm" firstAttribute="top" secondItem="xAf-V6-X3m" secondAttribute="top" id="Mrt-9X-JtF"/>
+                            <constraint firstItem="4XC-kd-BNm" firstAttribute="bottom" secondItem="NKA-mo-Ge2" secondAttribute="top" id="Qgz-rB-a0a"/>
+                            <constraint firstItem="4XC-kd-BNm" firstAttribute="leading" secondItem="xAf-V6-X3m" secondAttribute="leading" id="xmG-bu-tta"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="4XC-kd-BNm" id="U9d-BS-kTm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ert-YU-2jl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1255" y="377"/>
+        </scene>
+    </scenes>
+</document>
